@@ -50,6 +50,10 @@ export class JwtService {
     localStorage.removeItem("access_token");
   }
 
+  getToken():any{
+    return localStorage.getItem("access_token")
+  }
+
   public loggedIn(): boolean {
     return localStorage.getItem("access_token") !== null;
   }
