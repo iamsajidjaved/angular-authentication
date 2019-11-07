@@ -34,7 +34,7 @@ export class JwtService {
       )
       .subscribe(data => {
         localStorage.setItem("access_token", data.jwt);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       });
   }
 
@@ -50,7 +50,7 @@ export class JwtService {
     localStorage.removeItem("access_token");
   }
 
-  public get loggedIn(): boolean {
+  public loggedIn(): boolean {
     return localStorage.getItem("access_token") !== null;
   }
 }

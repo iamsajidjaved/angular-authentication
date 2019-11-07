@@ -3,14 +3,17 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule} from '@angular/forms'
 import { JwtModule } from "@auth0/angular-jwt";
-
 import { AppRoutingModule } from "./app-routing.module";
+import {AuthGuard} from './auth.guard'
+
 import { AppComponent } from "./app.component";
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, NavbarComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,7 +29,7 @@ import { HomeComponent } from './home/home.component';
       }
     })
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { JwtService } from "./../jwt.service";
+import {NavbarComponent} from "./../navbar/navbar.component"
 
 @Component({
   selector: "app-login",
